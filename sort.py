@@ -1,16 +1,16 @@
 import random as ran
 #сортировка пузырьком
-list_1 = [ran.randint(0, 1000000) for t in range(100)]
-score1 = 0
-stop_flag = True
+list_1 = [ran.randint(0, 1000000) for t in range(100)] #случайные элементы из указанного диапазона
+score1 = 0 #начинаем подсчет с 0 количество сравнений
+stop_flag = True # стоп флаг если он имеет значение true запускает цикл
 while stop_flag:
-    stop_flag = False
-    for i in range(len(list_1) - 1):
-        score1 += 1
-        if list_1[i] < list_1[i + 1]:
-            a = list_1[i]
-            list_1[i] = list_1[i + 1]
-            list_1[i + 1] = a
+    stop_flag = False # меняем значение true, если программа не сделает изменене она завершиться 
+    for i in range(len(list_1) - 1): # -1 потому что в дальнейшем мы сравниваем с i + 1 
+        score1 += 1 #прибавляем каждый цикл +1
+        if list_1[i] < list_1[i + 1]: 
+            a = list_1[i] 
+            list_1[i] = list_1[i + 1] #меняем местами
+            list_1[i + 1] = a #меняем местами
             stop_flag = True
     print(list_1)       
 print(score1)
